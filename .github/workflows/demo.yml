@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~./npm
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,6 +32,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~./npm
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}    
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
