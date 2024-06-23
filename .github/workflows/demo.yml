@@ -12,7 +12,7 @@ jobs:
       - name: cache dependencies
         uses: actions/cache@v3
         with:
-          path: ~./npm
+          path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -35,7 +35,7 @@ jobs:
       - name: cache dependencies
         uses: actions/cache@v3
         with:
-          path: ~./npm
+          path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}    
       - name: Setup Node.js
         uses: actions/setup-node@v3
